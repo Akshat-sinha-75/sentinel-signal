@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const { getLivePrice, getIndices, getTopMovers } = require("./services/marketData");
+const { getLivePrice, getIndices, getTopMovers, getQuotes } = require("./services/marketData");
 const { createClient } = require("@supabase/supabase-js");
 
 
@@ -73,47 +73,32 @@ app.get("/portfolio", authenticate, async (req, res) => {
 
   if (error) return res.status(400).json({ error });
 
-  //   const enriched = [];
+  if (holdings.length === 0) return res.json([]);
 
-  //   for (let holding of holdings) {
-  //     const livePrice = await getLivePrice(holding.ticker);
+  // Extract unique tickers and fetch quotes in one batch
+  const tickers = [...new Set(holdings.map(h => h.ticker))];
+  const quotes = await getQuotes(tickers);
 
-  //     if (!livePrice) continue;
+  const enriched = holdings.map((holding) => {
+    const symbol = holding.ticker.endsWith(".NS") ? holding.ticker : holding.ticker + ".NS";
+    const q = quotes[symbol];
 
-  //     const pnl = (livePrice - holding.average_price) * holding.quantity;
+    if (!q) return null;
 
-  //     enriched.push({
-  //       ...holding,
-  //       live_price: livePrice,
-  //       current_value: livePrice * holding.quantity,
-  //       pnl,
-  //       pnl_percent:
-  //         ((livePrice - holding.average_price) / holding.average_price) * 100,
-  //     });
-  //   }
+    const livePrice = q.regularMarketPrice;
+    const pnl = (livePrice - holding.average_price) * holding.quantity;
 
-  //   res.json(enriched);
-  const enriched = await Promise.all(
-    holdings.map(async (holding) => {
-      const livePrice = await getLivePrice(holding.ticker);
+    return {
+      ...holding,
+      live_price: livePrice,
+      current_value: livePrice * holding.quantity,
+      pnl,
+      pnl_percent:
+        ((livePrice - holding.average_price) / holding.average_price) * 100,
+    };
+  }).filter(Boolean);
 
-      if (!livePrice) return null;
-
-      const pnl = (livePrice - holding.average_price) * holding.quantity;
-
-      return {
-        ...holding,
-        live_price: livePrice,
-        current_value: livePrice * holding.quantity,
-        pnl,
-        pnl_percent:
-          ((livePrice - holding.average_price) / holding.average_price) * 100,
-      };
-    })
-  );
-
-  res.json(enriched.filter(Boolean));
-
+  res.json(enriched);
 });
 
 
