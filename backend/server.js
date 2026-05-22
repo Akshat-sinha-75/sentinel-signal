@@ -1,5 +1,4 @@
-require("dotenv").config();
-const express = require("express");
+
 const cors = require("cors");
 const { getLivePrice, getIndices, getTopMovers, getQuotes } = require("./services/marketData");
 const { createClient } = require("@supabase/supabase-js");
