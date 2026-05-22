@@ -15,22 +15,13 @@ const WATCHLIST = [
 ];
 
 // Simple in-memory cache
-const cache = new Map();
-const CACHE_TTL = 15 * 1000; // 30 seconds
+
 
 async function getQuotes(symbols) {
   const now = Date.now();
   const results = {};
   const symbolsToFetch = [];
 
-  symbols.map(s => s.endsWith(".NS") || Object.values(INDICES).includes(s) ? s : s + ".NS").forEach((s) => {
-    const cached = cache.get(s);
-    if (cached && now - cached.timestamp < CACHE_TTL) {
-      results[s] = cached.data;
-    } else {
-      symbolsToFetch.push(s);
-    }
-  });
 
   if (symbolsToFetch.length > 0) {
     try {
