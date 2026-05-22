@@ -7,12 +7,6 @@ const { createClient } = require("@supabase/supabase-js");
 const app = express();
 
 
-// Market Data Endpoints
-app.get("/market/indices", async (req, res) => {
-  const data = await getIndices();
-  res.json(data);
-});
-
 app.get("/market/movers", async (req, res) => {
   const data = await getTopMovers();
   res.json(data);
