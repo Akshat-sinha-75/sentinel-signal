@@ -13,12 +13,6 @@ async function login() {
     password: "Akshatsinha@18"
   });
 
-  if (error) {
-    console.log("Login error:", error);
-  } else {
-    console.log("ACCESS TOKEN:");
-    console.log(data.session.access_token);
-  }
-}
+
 
 
