@@ -5,14 +5,7 @@ const { createClient } = require("@supabase/supabase-js");
 
 
 const app = express();
-app.use(cors());
-app.use(express.json());
 
-// Supabase admin client
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_ROLE_KEY
-);
 
 // Market Data Endpoints
 app.get("/market/indices", async (req, res) => {
