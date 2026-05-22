@@ -8,12 +8,6 @@ const supabase = createClient(
 
 
 
-  if (error) {
-    console.log("Login error:", error);
-  } else {
-    console.log("ACCESS TOKEN:");
-    console.log(data.session.access_token);
-  }
-}
+
 
 
