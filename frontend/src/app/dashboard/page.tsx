@@ -28,20 +28,7 @@ export default function DashboardPage() {
         checkUser();
     }, [router]);
 
-    const { data: holdings, isLoading: holdingsLoading } = useQuery({
-        queryKey: ['holdings'],
-        queryFn: getHoldings,
-        enabled: !!user,
-        refetchInterval: 2000,
-    });
 
-    if (authLoading || (!!user && holdingsLoading)) {
-        return (
-            <div className="flex h-screen items-center justify-center bg-background">
-                <Loader2 className="h-10 w-10 animate-spin text-primary" />
-            </div>
-        );
-    }
 
     if (!user) return null;
 
