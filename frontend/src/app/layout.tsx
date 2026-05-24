@@ -9,15 +9,9 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
-export const metadata: Metadata = {
-  title: "Sentinel Signal",
-  description: "Advanced Market Intelligence & Portfolio Tracking",
-};
+
+
 
 export default function RootLayout({
   children,
