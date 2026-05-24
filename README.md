@@ -48,3 +48,19 @@ Establishment of a structured pull request history and changelog within the proj
 Documentation for previous architectural changes and API deprecations has been integrated into the README to improve project transparency. This update records the removal of hardcoded credentials and the Express framework from the backend, as well as the deletion of the market indices endpoint. Consolidating these logs provides a central reference point for developers to identify historical breaking changes and migration requirements. This formalization of the changelog ensures that all contributors have immediate visibility into the evolving state of the `main` and `test` branches.
 
 **Triggered by:** @Akshat-sinha-75 | **Merged into:** `test`
+
+---
+## PR #11 — 2026-05-24
+
+**Feature:** Test
+
+**Feature/Fix**
+UI Refactor: Simplified the landing page hero section by removing animated wrappers and decorative status indicators.
+
+**Files Changed**
+*   `frontend/src/app/page.tsx`: Updated the root page component to strip the `main` layout wrapper, Framer Motion animation logic, and the "Live Market Intelligence" badge.
+
+**Summary**
+The landing page hero section has been streamlined to remove the `motion.div` entry animation and the "Live Market Intelligence" status badge. This change eliminates the nested layout containers that previously wrapped the primary H1 heading. By removing these decorative elements, the component hierarchy is flattened and the initial visual load is simplified. No functional logic or routing changes were made during this refactor.
+
+**Triggered by:** @Akshat-sinha-75 | **Merged into:** `main`
