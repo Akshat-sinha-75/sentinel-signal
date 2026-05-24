@@ -64,3 +64,35 @@ UI Refactor: Simplified the landing page hero section by removing animated wrapp
 The landing page hero section has been streamlined to remove the `motion.div` entry animation and the "Live Market Intelligence" status badge. This change eliminates the nested layout containers that previously wrapped the primary H1 heading. By removing these decorative elements, the component hierarchy is flattened and the initial visual load is simplified. No functional logic or routing changes were made during this refactor.
 
 **Triggered by:** @Akshat-sinha-75 | **Merged into:** `main`
+
+---
+## PR #12 — 2026-05-24
+
+**Feature:** ..
+
+1. **Feature/Fix**
+Documentation: Formalization of the project changelog and historical record of architectural updates.
+
+2. **Files Changed**
+* `README.md`: Updated to include technical summaries, contributor metadata, and breaking change notifications for PR #10 and PR #11.
+
+3. **Summary**
+Documentation for historical API deprecations and frontend refactors has been integrated into the central README to improve project transparency. This update records the removal of the `/market/indices` endpoint and the simplification of the landing page hero section by stripping Framer Motion logic. Consolidating these logs provides a technical reference point for developers to identify historical breaking changes and component hierarchy updates. The addition ensures immediate visibility into the evolving state of both the `main` and `test` branches.
+
+**Triggered by:** @Akshat-sinha-75 | **Merged into:** `test`
+
+---
+## PR #13 — 2026-05-24
+
+**Feature:** Test
+
+### Feature/Fix
+Landing page UI cleanup involving the removal of hero typography and feature grid animations.
+
+### Files Changed
+* `frontend/src/app/page.tsx`: Defines the root landing page layout; removed the primary hero text elements and the animated `motion.div` wrapper for the features section.
+
+### Summary
+The landing page hero section was updated to remove the primary "Trade with Precision" headline and associated descriptive subtext. The animated `motion.div` container surrounding the features grid was deleted, simplifying the DOM structure and removing entry transitions for the feature cards. These changes reduce visual clutter on the home route by prioritizing navigation buttons over marketing copy. No breaking changes or state modifications were introduced in this update.
+
+**Triggered by:** @Akshat-sinha-75 | **Merged into:** `main`
