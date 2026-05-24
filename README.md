@@ -112,3 +112,19 @@ Documentation: Formalization of the project changelog and historical record of a
 Documentation for historical API deprecations and frontend refactors has been integrated into the central README to improve project transparency. This update records the removal of the `/market/indices` endpoint and the simplification of the landing page hero section across the `main` and `test` branches. Consolidating these logs provides a technical reference point for developers to identify historical breaking changes and component hierarchy updates. No functional code or logic changes were made during this documentation update.
 
 **Triggered by:** @Akshat-sinha-75 | **Merged into:** `test`
+
+---
+## PR #15 — 2026-05-24
+
+**Feature:** Test
+
+1. **Feature/Fix**
+Simplify landing page layout and remove decorative UI elements.
+
+2. **Files Changed**
+* `frontend/src/app/page.tsx`: The root landing page component; updated to remove visual background effects and the primary navigation header.
+
+3. **Summary**
+Removed decorative background gradient divs and the fixed header containing the "Sentinel Signal" brand assets. The refactoring streamlines the page structure by focusing strictly on the login navigation path. These updates reduce visual complexity and decrease the total number of DOM elements rendered on the initial application route. No breaking changes were introduced as core navigation remains functional.
+
+**Triggered by:** @Akshat-sinha-75 | **Merged into:** `main`
