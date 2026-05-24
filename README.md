@@ -96,3 +96,19 @@ Landing page UI cleanup involving the removal of hero typography and feature gri
 The landing page hero section was updated to remove the primary "Trade with Precision" headline and associated descriptive subtext. The animated `motion.div` container surrounding the features grid was deleted, simplifying the DOM structure and removing entry transitions for the feature cards. These changes reduce visual clutter on the home route by prioritizing navigation buttons over marketing copy. No breaking changes or state modifications were introduced in this update.
 
 **Triggered by:** @Akshat-sinha-75 | **Merged into:** `main`
+
+---
+## PR #14 — 2026-05-24
+
+**Feature:** ..
+
+1. **Feature/Fix**
+Documentation: Formalization of the project changelog and historical record of architectural updates.
+
+2. **Files Changed**
+* `README.md`: Updated to include technical summaries, contributor metadata, and historical records for PR #12 and PR #13.
+
+3. **Summary**
+Documentation for historical API deprecations and frontend refactors has been integrated into the central README to improve project transparency. This update records the removal of the `/market/indices` endpoint and the simplification of the landing page hero section across the `main` and `test` branches. Consolidating these logs provides a technical reference point for developers to identify historical breaking changes and component hierarchy updates. No functional code or logic changes were made during this documentation update.
+
+**Triggered by:** @Akshat-sinha-75 | **Merged into:** `test`
