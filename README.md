@@ -128,3 +128,19 @@ Simplify landing page layout and remove decorative UI elements.
 Removed decorative background gradient divs and the fixed header containing the "Sentinel Signal" brand assets. The refactoring streamlines the page structure by focusing strictly on the login navigation path. These updates reduce visual complexity and decrease the total number of DOM elements rendered on the initial application route. No breaking changes were introduced as core navigation remains functional.
 
 **Triggered by:** @Akshat-sinha-75 | **Merged into:** `main`
+
+---
+## PR #16 — 2026-05-24
+
+**Feature:** Update layout.tsx
+
+1. **Feature/Fix**
+Refactor root layout to remove unused font assets and global metadata.
+
+2. **Files Changed**
+* `frontend/src/app/layout.tsx`: Defines the core HTML structure and global configuration for the Next.js application.
+
+3. **Summary**
+Removed the `Geist_Mono` font definition and the exported `metadata` object from the application's entry point. This change eliminates unused CSS variables associated with the mono font, slightly reducing the initial CSS payload. BREAKING: Removing the global `metadata` constant deletes the default site title and description ("Sentinel Signal") across all routes. Developers must now ensure that individual page components define their own metadata to maintain SEO and proper browser tab labeling.
+
+**Triggered by:** @Akshat-sinha-75 | **Merged into:** `main`
