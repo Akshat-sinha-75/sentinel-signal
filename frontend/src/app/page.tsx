@@ -9,22 +9,9 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden selection:bg-indigo-500/30">
 
-      {/* Background Gradients */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 h-[500px] w-[500px] bg-indigo-600/20 rounded-full blur-[120px] mix-blend-screen" />
-        <div className="absolute bottom-0 right-1/4 h-[500px] w-[500px] bg-emerald-600/10 rounded-full blur-[120px] mix-blend-screen" />
-      </div>
-
+     
       <div className="relative z-10 flex flex-col min-h-screen">
-        {/* Simple Header */}
-        <header className="px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="bg-primary text-primary-foreground p-2 rounded-lg">
-              <Activity size={20} />
-            </div>
-            <span className="font-bold text-xl tracking-tight">Sentinel Signal</span>
-          </div>
-          <Link
+      
             href="/login"
             className="text-sm font-medium hover:text-indigo-400 transition-colors"
           >
