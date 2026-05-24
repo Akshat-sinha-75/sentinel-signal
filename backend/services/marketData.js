@@ -10,7 +10,7 @@ const INDICES = {
 
 const WATCHLIST = [
   "RELIANCE.NS", "TCS.NS", "HDFCBANK.NS", "INFY.NS", "ICICIBANK.NS",
-  "SBIN.NS", "TATAMOTORS.NS", "ITC.NS", "AXISBANK.NS", "LT.NS"
+  
 
 ];
 
