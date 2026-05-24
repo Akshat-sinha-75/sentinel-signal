@@ -34,16 +34,6 @@ export default function Home() {
 
        
 
-            <h1 className="text-5xl sm:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white to-white/40">
-              Trade with <br />
-              <span className="text-indigo-500">Precision.</span>
-            </h1>
-
-            <p className="max-w-2xl mx-auto text-lg sm:text-xl text-muted-foreground leading-relaxed">
-              Advanced portfolio tracking and real-time market analysis tailored for the modern trader.
-              Track your holdings, monitor indices, and visualize performance in one premium interface.
-            </p>
-
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <Link href="/dashboard">
                 <motion.button
@@ -69,14 +59,6 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Features Grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="mt-24 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto text-left"
-          >
-            {[
               { icon: Activity, title: 'Real-time Data', desc: 'Live updates for NIFTY, SENSEX, and top market movers.' },
               { icon: Shield, title: 'Secure Portfolio', desc: 'Bank-grade encryption for your holdings and personal data.' },
               { icon: BarChart2, title: 'Advanced Analytics', desc: 'Interactive charts and P&L breakdowns for deeper insights.' },
