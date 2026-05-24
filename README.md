@@ -64,3 +64,19 @@ UI Refactor: Simplified the landing page hero section by removing animated wrapp
 The landing page hero section has been streamlined to remove the `motion.div` entry animation and the "Live Market Intelligence" status badge. This change eliminates the nested layout containers that previously wrapped the primary H1 heading. By removing these decorative elements, the component hierarchy is flattened and the initial visual load is simplified. No functional logic or routing changes were made during this refactor.
 
 **Triggered by:** @Akshat-sinha-75 | **Merged into:** `main`
+
+---
+## PR #12 — 2026-05-24
+
+**Feature:** ..
+
+1. **Feature/Fix**
+Documentation: Formalization of the project changelog and historical record of architectural updates.
+
+2. **Files Changed**
+* `README.md`: Updated to include technical summaries, contributor metadata, and breaking change notifications for PR #10 and PR #11.
+
+3. **Summary**
+Documentation for historical API deprecations and frontend refactors has been integrated into the central README to improve project transparency. This update records the removal of the `/market/indices` endpoint and the simplification of the landing page hero section by stripping Framer Motion logic. Consolidating these logs provides a technical reference point for developers to identify historical breaking changes and component hierarchy updates. The addition ensures immediate visibility into the evolving state of both the `main` and `test` branches.
+
+**Triggered by:** @Akshat-sinha-75 | **Merged into:** `test`
